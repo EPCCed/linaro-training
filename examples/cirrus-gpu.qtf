@@ -1,0 +1,47 @@
+#!/bin/sh --login
+#
+# NOTE: if using with srun then you should select "SLURM (generic)" as the MPI
+#       implementation on the System Settings page of the Options window.
+#
+# WARNING: If you install a new version of Arm Forge to the same
+#          directory as this installation, then this file will be overwritten.
+#          If you customize this script at all, please rename it.
+#
+# Name: cirrus
+#
+# submit: sbatch
+# display: squeue
+# job regexp: (\d+)
+# cancel: scancel JOB_ID_TAG
+#
+# WALL_CLOCK_LIMIT_TAG: {type=text,label="Wall Clock Limit",default="00:20:00",mask="09:09:09"}
+# QUEUE_TAG: {type=text,label="Partition",default=standard}
+# QOS_TAG: {type=text,label="QoS",default=short}
+# ACCOUNT_TAG: {type=text,label="Account"}
+# NUM_GPUS_TAG: {type=text,label="Number of gpu"}
+
+#SBATCH --nodes=NUM_NODES_TAG
+#SBATCH --account=ACCOUNT_TAG
+#SBATCH --time=WALL_CLOCK_LIMIT_TAG
+#SBATCH --job-name="ddt"
+#SBATCH --output=ddt.o%J
+#SBATCH --partition=QUEUE_TAG
+#SBATCH --qos=QOS_TAG
+#SBATCH --exclusive
+#SBATCH --distribution=block:block
+#SBATCH --hint=nomultithread
+#SBATCH --gres=gpu:NUM_GPUS_TAG
+
+ulimit -c unlimited
+export OMP_NUM_THREADS=1
+
+export SRUN_CPUS_PER_TASK=$SLURM_CPUS_PER_TASK
+
+export TMPDIR=/tmp
+
+
+module load nvidia/nvhpc-nompi/24.5
+module load openmpi/4.1.6-cuda-11.8-nvfortran
+
+
+AUTO_LAUNCH_TAG
