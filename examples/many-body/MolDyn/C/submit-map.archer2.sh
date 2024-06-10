@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Slurm job options (job-name, compute nodes, job time)
-#SBATCH --job-name=lammps_test
+#SBATCH --job-name=manybody
 #SBATCH --time=0:20:0
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1

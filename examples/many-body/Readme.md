@@ -6,3 +6,7 @@ Use the `archer2.qtf` template submission file to launch an interactive DDT sess
 1) Step trough the program.
 2) Create a breakpoint in the suboutine computing the forces.
 3) Trace the value of the energy during the simulation.
+
+# Build
+
+Move in the directory containg the code and type `make`. The folders contain some example submission scripts.
