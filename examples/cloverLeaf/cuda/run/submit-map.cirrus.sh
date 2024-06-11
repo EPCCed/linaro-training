@@ -6,11 +6,10 @@
 #SBATCH --partition=gpu
 #SBATCH --qos=short
 #SBATCH --exclusive
-#SBATCH --account=z04
 #SBATCH --gres=gpu:1
 
 module load nvidia/nvhpc-nompi/24.5
-module load openmpi/4.1.6-cuda-11.8-nvfortran
+module load openmpi/4.1.6-cuda-12.4-nvfortran
 module load forge/24.0
 
 # name of the executable

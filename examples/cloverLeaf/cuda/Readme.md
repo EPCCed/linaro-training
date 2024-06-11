@@ -5,9 +5,8 @@ Load the environment
 
 ```bash
 module load nvidia/nvhpc-nompi/24.5
-module load openmpi/4.1.6-cuda-11.8-nvfortran
+module load openmpi/4.1.6-cuda-12.4-nvfortran
 export LIBRARY_PATH=/work/y07/shared/cirrus-software/nvidia/hpcsdk-24.5/Linux_x86_64/24.5/cuda/12.4/targets/x86_64-linux/lib/:$LIBRARY_PATH
-DEBUGOPT=1 make NV_ARCH=VOLTA -j 16
 ```
 
 Get the code and build
@@ -15,7 +14,7 @@ Get the code and build
 git clone https://github.com/UK-MAC/CloverLeaf_CUDA
 cd CloverLeaf_CUDA
 cp ../Makefile .
-make NV_ARCH=VOLTA -j 8
+DEBUGOPT=1 make NV_ARCH=VOLTA -j 8
 ```
 
 ## Run

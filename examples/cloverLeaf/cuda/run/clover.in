@@ -15,7 +15,7 @@
  timestep_rise=1.5
  max_timestep=0.04
  end_time=20
- end_step=2560
+ end_step=250
  profiler_on
  tiles_per_chunk 1
  use_cuda_kernels

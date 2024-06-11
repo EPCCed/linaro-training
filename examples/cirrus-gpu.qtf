@@ -28,8 +28,6 @@
 #SBATCH --partition=QUEUE_TAG
 #SBATCH --qos=QOS_TAG
 #SBATCH --exclusive
-#SBATCH --distribution=block:block
-#SBATCH --hint=nomultithread
 #SBATCH --gres=gpu:NUM_GPUS_TAG
 
 ulimit -c unlimited
@@ -39,9 +37,7 @@ export SRUN_CPUS_PER_TASK=$SLURM_CPUS_PER_TASK
 
 export TMPDIR=/tmp
 
-
 module load nvidia/nvhpc-nompi/24.5
-module load openmpi/4.1.6-cuda-11.8-nvfortran
-
+module load openmpi/4.1.6-cuda-12.4-nvfortran
 
 AUTO_LAUNCH_TAG
