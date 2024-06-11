@@ -19,3 +19,18 @@ module load forge/24.0
 
 - `slides`: Contains the slides presented during the day
 - `examples`: Contains the hands-on exercises
+
+## Schedule ( approximate )
+
+| Time | Topic |
+------ | ---- |
+09.30 - 10.15 |  DDT (debugging)
+10.15 - 11:00 | Hands on (includes connecting, setting up etc... )
+11.00 - 11.15 | Coffee/tea break 
+11.15 - 12.00 |  MAP (profiling)
+12.00 - 12.30 | Hands on 
+12.30 - 13.30 | Lunch
+13.30 - 14:15 | Debugging and profiling on GPU
+14:15 - 14:40 | Hands on 
+14:40 - 15:00 | Coffee/tea break; moving to separate meeting rooms (2.55, 2.56, 1.35) 
+15:00 - 17:00 | Work on own code at separate meeting rooms (2.55, 2.56, 1.35)
